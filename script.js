@@ -1,46 +1,134 @@
 //1
-let randomArray1 = [];
-for (let i = 0; i < 10; i++) {
-    randomArray1.push(Math.floor(Math.random() * 100) + 1);
+let car = {
+    make: "Toyota" ,
+    model: "Camry" ,
+    year: 2020 
 }
-console.log(randomArray1);
+
+console.log(car);
+
+let owner ={
+    fullName:"JaneSmith" ,
+    firstName: "Jane", 
+    lastName: "Smith", 
+    age: 28, 
+    email: "jane.smith@example.com" 
+}
+console.log(owner);
 
 //2
-randomArray1.push(72);
-console.log("After push:", randomArray1 );
+
+console.log("Make:", car.make);
+console.log("Model:", car.model);
+console.log("Year:", car.year);
+console.log("Owner's Full Name:", owner.fullName);
+console.log("Owner's First Name:", owner.firstName);
+console.log("Owner's Last Name:", owner.lastName);
+console.log("Owner's Age:", owner.age);
+console.log("Owner's Email:", owner.email);
 
 //3
-randomArray1.pop();
-console.log("After pop:", randomArray1);
+car.year = 2021;
+owner.email = "jane2021.smith@example.com"
+
+console.log("Updated Car Object:", car);
+console.log("Updated Owner Mail:", owner)
 
 //4
-randomArray1.unshift(53);
-console.log("After unshift:" ,randomArray1);
+car.insurance = {
+    provider: "Geico",
+    policyNumber: "XYZ1234567",
+    expiryDate: "2024-12-31"
+};
+
+console.log("Updated Car Info with Insurance:", car);
+
 
 //5
-randomArray1.shift();
-console.log("After shift:" ,randomArray1);
+delete owner.email;
+
+console.log("After Updating Owner Info", car)
+console.log(owner)
 
 //6
-randomArray1.sort((a, b) => a - b);
-console.log("Sorted array in ascending order:", randomArray1);
+car.serviceHistory = 
+    
+        {
+         date: "2021-06-01",
+         service: "Oil change",
+         cost: 50
+         },
+         {
+         date: "2022-01-15",
+         service: "Tire rotation",
+         cost: 100
+         }
+         ;   
+   console.log("After Adding Service History",car.serviceHistory);
+
+   console.log(car);
+console.log(owner);
 
 //7
-randomArray1.sort((a, b) => b - a);
-console.log("Sorted array in descending order:", randomArray1);
 
-//8
-console.log("Array elements:");
-randomArray1.forEach(element => console.log(element));
+console.log("Properties of Car:");
+for (let key in car) {
+    if (typeof car[key] === 'object') {
+        console.log(`${key}:`);
+        for (let nestedKey in car[key]) {
+            console.log(`  ${nestedKey}: ${car[key][nestedKey]}`);
+        }
+    } else {
+        console.log(`${key}: ${car[key]}`);
+    }
+}
 
-//9
-let squaredArray = randomArray1.map(element => element * element);
-console.log("Squared array:", squaredArray)
 
-//10
-let evenArray = randomArray1.filter(element => element % 2 === 0);
-console.log("Even numbers array:", evenArray);
 
-//11
-let sum = randomArray1.reduce((total, currentValue) => total + currentValue, 0);
-console.log("Sum of all elements:", sum);
+
+
+
+
+// //2
+// let car1 = {
+//     make: "Toyota" ,
+//     model: "Camry" ,
+//     year: 2020 
+// }
+
+// console.log(typeof(car));
+
+// let owner1 ={
+//     firstName: "Jane", 
+//     lastName: "Smith", 
+//     age: 28, 
+//     email: "jane.smith@example.com" 
+// }
+// console.log(typeof(owner));
+
+// //3
+
+// let car2 = {
+    
+//     year: 2020
+    
+// }
+// console.log(car2);
+
+// car2.year = 2023;
+// console.log("Updated car2 object:", car2);
+
+
+
+// let car3 ={
+//     email_id :"jane.smith@example.com" ,
+
+// }
+
+// console.log(car3);
+
+// car3.email_id = jane23smith@example.com 
+// console.log("Updated car3 object:" , car3);
+
+
+
